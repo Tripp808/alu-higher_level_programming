@@ -1,4 +1,1 @@
-#!/usr/bin/python3
-#!/usr/bin/python3
-object = "example"
-print(type(object))
+type
