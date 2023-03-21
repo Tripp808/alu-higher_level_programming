@@ -3,4 +3,4 @@ def magic_string():
     if not hasattr(magic_string, "count"):
         magic_string.count = 0
     magic_string.count += 1
-    return "Holberton, " * (magic_string.count - 1) + "Holberton"
+    return ", ".join(["BestSchool"] * magic_string.count)
