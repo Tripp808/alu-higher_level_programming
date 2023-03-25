@@ -4,6 +4,7 @@
 Returns a list of Pascal's Triangles
 """
 
+
 def pascal_triangle(n):
     """
     Returns a list of Pascal's Triangles
