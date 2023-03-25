@@ -1,15 +1,21 @@
+#!/usr/bin/python3
+"""Module that inserts a line of text to a file, after each line containing a specific string"""
+
 def append_after(filename="", search_string="", new_string=""):
-    # Open the file for reading and writing using with statement
-    with open(filename, mode='r+', encoding='utf-8') as f:
-        # Read the contents of the file into a list
+    """Function that inserts a line of text to a file, after each line containing a specific string"""
+    with open(filename, mode='r', encoding='utf-8') as f:
         lines = f.readlines()
 
-        # Loop over the lines and find the lines containing the search string
-        for i in range(len(lines)):
-            if search_string in lines[i]:
-                # Insert the new string after the line containing the search string
-                lines.insert(i+1, new_string)
+    with open(filename, mode='w', encoding='utf-8') as f:
+        for line in lines:
+            f.write(line)
+            if search_string in line:
+                f.write(new_string)
 
-        # Write the modified contents back to the file
-        f.seek(0)
-        f.writelines(lines)
+if __name__ == '__main__':
+    # Testing the function
+    append_after("c", "Python is cool!\n", "file = c is fun!\n")
+    append_after("nop", "Python is cool!\n", "file = Nop, nothing here Really nothing \n")
+    append_after("c_is_fun", "Python is cool!\n", "file = Here c is fun Holberton School c is fun c is fun We are Holberton c is fun\n")
+    append_after("big_text", "Python", "file = Big text\n")
+    append_after("non_existent_file", "Python", "file = Non-existent file\n")
