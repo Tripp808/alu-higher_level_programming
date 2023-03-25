@@ -1,9 +1,13 @@
 #!/usr/bin/python3
-"""Returns list of pascal triangles"""
 
+"""
+Returns a list of Pascal's Triangles
+"""
 
 def pascal_triangle(n):
-    """Returns list of pascal triangles"""
+    """
+    Returns a list of Pascal's Triangles
+    """
     list_of_lists = []
 
     for i in range(n):
@@ -23,4 +27,5 @@ def pascal_triangle(n):
                     break
             new_list.append(1)
             list_of_lists.append(new_list)
-    return 
+
+    return list_of_lists
