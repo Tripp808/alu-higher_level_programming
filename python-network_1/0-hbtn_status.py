@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+"""A simple script to retrieve the status of the intranet.hbtn.io website"""
+
 import urllib.request
 
 if __name__ == '__main__':
