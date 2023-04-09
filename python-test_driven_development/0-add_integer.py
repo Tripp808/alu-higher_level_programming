@@ -1,15 +1,21 @@
 #!/usr/bin/python3
-add_integer = __import__('0-add_integer').add_integer
+"""Adds two numbers"""
 
-print(add_integer(1, 2))
-print(add_integer(100, -2))
-print(add_integer(2))
-print(add_integer(100.3, -2))
-try:
-    print(add_integer(4, "School"))
-except Exception as e:
-    print(e)
-try:
-    print(add_integer(None))
-except Exception as e:
-    print(e)
+
+def add_integer(a, b=98):
+    """
+    Returns sum of a and b
+    - Args :
+        a: int or float
+        b: int or float, default 98
+    """
+    if type(a) == float or type(b) == float:
+        a = int(a)
+        b = int(b)
+
+    if type(a) != int:
+        raise TypeError("a must be an integer")
+    if type(b) != int:
+        raise TypeError("b must be an integer")
+
+    return a + b
